@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Test | Test functions for Phone-Bill Widgets</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js" charset="utf-8"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.min.js"></script>
+</head>
+<body>
+    <div id="mocha">
+        <script>
+            //Setting up Mocha for the browser
+            mocha.setup('bdd')
+            var assert = chai.assert
+        </script>
+
+        <!-- calculate-bill function testing using factorty function -->
+        <script src="../functions/calculate-billfunc.js"></script>
+        <script src="../tests/calculate-bill.test.js"></script>
+
+        <!-- Text biill type function testing using factorty function -->
+        <script src="../functions/text-billfunc.js"></script>
+        <script src="../tests/text-bill.test.js"></script>
+
+        <!-- Radio Bill function testing using factorty function -->
+        <script src="../functions/radio-billfunc.js"></script>
+        <script src="./tests/radio-bill.test.js"></script>
+
+        <!-- Setting Bill function testing using factorty function -->
+        <script src="../functions/setting-billfunc.js"></script>
+        <script src="../tests/setting-bill.test.js"></script>
+
+        <script>
+            mocha.checkLeaks()
+            mocha.run()
+        </script>
+    </div>
+</body>
+</html>
