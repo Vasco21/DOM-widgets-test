@@ -18,7 +18,7 @@ var calculateBill = function(billStringPassed){
     var billlTotal = (2.75 * call) + (sms * 0.65)
     return {
         //returning the fixed value
-        Total: billlTotal
+        Total: billlTotal,
     }
 }
 function styleTotalColor(roundedBillTotal){

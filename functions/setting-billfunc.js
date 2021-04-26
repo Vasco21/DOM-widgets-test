@@ -1,90 +1,100 @@
-var settingBill = function(){
+function billWithSettings(){
+    
     var theCallCost = 0;
-    var theSmscost = 0;
+    var theSmsCost = 0;
     var theWarningLevel = 0;
     var theCriticalLevel = 0;
 
-    var costCallTotal = 0;
-    var costSmsTotal = 0;
+    var callCostTotal = 0;
+    var smsCostTotal = 0;
 
-    
-
-     var setCallCost = function(callCost){
-         theCallCost = callCost;
-
+    function setCallCost(callCost){
+        theCallCost = callCost;
+    }
+    function getCallCost(){
+    return theCallCost;
     }
 
-    var getCallCost = function(){
-        return theCallCost;
+    function setSmsCost(smsCost){
+        theSmsCost = smsCost;
     }
-    var setSmsCost = function(smsCost){
-        theSmscost = smsCost;
+    function getSmsCost(){
+        return theSmsCost;
     }
-    var getSmsCost = function(){
-        return theSmscost;
+    function setWarningLev(warningLevel){
+            theWarningLevel = warningLevel;
     }
-
-    var setWarningLevel = function(warningLevel){
-        theWarningLevel = warningLevel;
-    }
-    var getWarningLevel = function(){
+    function getWarningLev(){
         return theWarningLevel;
     }
-    var setCriticalLevel = function(CriticalLevel){
-        theCriticalLevel = CriticalLevel;
-    }
-    var getCriticalLevel = function(){
+    function setCriticalLev(criticalLevel){
+        theCriticalLevel = criticalLevel;
+                }
+    function getCriticalLev(){
         return theCriticalLevel;
-    }
-    var  makeCall = function(){
-        if(!hasReachedCritical())
-        {
-            costCallTotal += theCallCost
+                }
+    function makeCallCost() {
+        if(!reachedCritcalLev()){
+        callCostTotal += theCallCost;
         }
     }
-    var getTatolCost = function(){
-        return costCallTotal + costSmsTotal;
+    function sendSmsCost(){
+        if(!reachedCritcalLev()) {
+            smsCostTotal += theSmsCost;
+        }
     }
-    var getTatolCallCost = function(){
-        return costCallTotal;
+    function SwitchBtn(){
+    var checkedRadioBillBtnThree = document.querySelector("input[name='billItemTypeWithSettings']:checked");
+    if (checkedRadioBillBtnThree){
+        var billItem = checkedRadioBillBtnThree.value;
+        if(billItem === "call"){
+            return makeCallCost();
+        }
+        if (billItem === "sms"){
+            return sendSmsCost();
+        }
+    }  
     }
-    var getTatolSmsCost = function(){
-        return costSmsTotal;
+    function getTotalCost(){
+        return callCostTotal + smsCostTotal;
+    }
+    function getTotalCallCost(){
+        return callCostTotal;
+    }
+    function getTotalSmsCost(){
+        return smsCostTotal;
+    }
+    function reachedCritcalLev(){
+        return getTotalCost() >= getCriticalLev();
+    }
 
-    }
-    var sendSms = function(){
-        if(!hasReachedCritical()){
-            costSmsTotal += theSmscost;
-        }
-    }
-
-    var hasReachedCritical = function(){
-        return (getTatolCost() >= getCriticalLevel())
-    }
-    var totalClassName = function(){
-        if (hasReachedCritical()){
-            return "critical"
-        }
+    function totalClassName(){
         
-        if(getTatolCost() >= getWarningLevel()){
-            return "warning";
+        if (reachedCritcalLev()){
+            return 'danger';
+        }
+        if (getTotalCost() >= getWarningLev()){
+            return 'warning';
         }
     }
 
-    return{
-        setCallCost,
-        getCallCost,
-        setSmsCost,
-        getSmsCost,
-        setWarningLevel,
-        getWarningLevel,
-        setCriticalLevel,
-        getCriticalLevel,
-        makeCall,
-        getTatolCost,
-        getTatolCallCost,
-        getTatolSmsCost,
-        sendSms,
-        totalClassName
-    }
+     
+return {
+    setCallCost,
+    getCallCost,
+    setSmsCost,
+    getSmsCost,
+    setWarningLev,
+    getWarningLev,
+    setCriticalLev,
+    getCriticalLev,
+    makeCallCost,
+    getTotalCost,
+    getTotalCallCost,
+    getTotalSmsCost,
+    sendSmsCost,
+    totalClassName,
+    reachedCritcalLev,
+    SwitchBtn
+}
 }

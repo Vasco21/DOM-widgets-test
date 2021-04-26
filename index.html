@@ -8,32 +8,63 @@
     <style>
         body{
             margin: 0;
-            padding: 0;     
+            padding: 0;
+            background-image: url(img.png);   
+        }
+        h1{
+            margin-top: 15%;
+            text-align: center;
+            color: red;
+        }
+        .all{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: red;
+        }
+        li:hover{
+            color: black;
+        }
+
+        .button{
+            font-size: 18px;
+            text-decoration: none;
+            color: black;
+            border:darkblue 1px solid;
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            color: red;
+        }
+        .button:hover{
+            background:black;
+            color: whitesmoke;
         }
     </style>
 </head>
 <body>
-    <h1>Welcome DOM WIDGETS</h1>
-    <div class="all">   
-    <div class="Functions">
+    <h1>Welcome To My DOM WIDGETS</h1>
+    <div class="all"> 
+    <div class="functions">
+        <h3>Functions and Dom-widgets</h3>
         <ul>
-            <h3>Dom-intro Functions</h3>
             <li>Calculate-bill.js</li>
             <li>Text-bill.js</li>
             <li>Radil-bill.js</li>
             <li>Setting-bill.js</li>
         </ul>
-        <a href="index/index.html" class="button">Total Phone Bill</a>
-    </div>
-
+        <a href="index/index.html" class="button">functions Connection</a>
+    </div>  
 
     <div class="test">
+        <h2>unit-testing-Dom-widgets</h2>
         <ul>
-            <h3>unit-testing-Dom-widgets</h3>
-            <li>Calculate-bill.js</li>
-            <li>Text-bill.js</li>
-            <li>Radil-bill.js</li>
-            <li>Setting-bill.js</li>
+            
+            <li>Calculate-billfunc.js</li>
+            <li>Text-billfunc.js</li>
+            <li>Radil-billfunc.js</li>
+            <li>Setting-billfunc.js</li>
         </ul>
         <a href="mocha-test/index.html" class="button">Unit Testing</a>
     </div>
