@@ -56,7 +56,7 @@ function radioBtnClickedThree(){
 
 function addcolors(){
     totalCostsElemThree.classList.remove("warning");
-    totalCostsElemThree.classList.remove("danger");
+    totalCostsElemThree.classList.remove("critical");
     totalCostsElemThree.classList.add(setInst.totalClassName());
 }
 //add an event listener for when the add button is pressed

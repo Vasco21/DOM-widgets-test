@@ -3,7 +3,6 @@ var textBill = function(){
     var totalSms = 0
 
     var calculates = function(billType){
-        // console.log('Inside calculates function...')
         if (billType === 'sms'){
             totalSms += 0.65
         }else if (billType === "call"){

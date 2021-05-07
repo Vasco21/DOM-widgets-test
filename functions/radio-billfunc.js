@@ -28,15 +28,15 @@ var radioBill = function(){
 
 var  radioBillColors = function(callSms){
     if ((callSms > 30) && (callSms <= 50)){
-        if (totalTwoElem.classList.contains('danger')){
-            totalTwoElem.classList.remove('danger')
+        if (totalTwoElem.classList.contains('critical')){
+            totalTwoElem.classList.remove('critical')
         }
         totalTwoElem.classList.add('warning')
     } else if (callSms > 50) {
         if (totalTwoElem.classList.contains('warning')) {
             totalTwoElem.classList.remove('warning')
         }
-        totalTwoElem.classList.add('danger')
+        totalTwoElem.classList.add('critical')
         }
     }
     

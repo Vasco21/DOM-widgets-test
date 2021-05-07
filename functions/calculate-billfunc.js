@@ -23,14 +23,14 @@ var calculateBill = function(billStringPassed){
 }
 function styleTotalColor(roundedBillTotal){
     if(roundedBillTotal < 20){
-    // if totalbill contains warning or danger
-        if(billTotalElement.classList.contains('warning' || 'danger')){
+    // if totalbill contains warning or critical
+        if(billTotalElement.classList.contains('warning' || 'critical')){
             //remove color
-            billTotalElement.classList.remove('danger', 'warning')
+            billTotalElement.classList.remove('critical', 'warning')
         }// remove the color total 
     }else if(roundedBillTotal >= 20 && roundedBillTotal <= 30){
-        if(billTotalElement.classList.contains('danger')){
-            billTotalElement.classList.remove('danger')
+        if(billTotalElement.classList.contains('critical')){
+            billTotalElement.classList.remove('critical')
         }
         //add the coloe total
         billTotalElement.classList.add('warning');
@@ -40,7 +40,7 @@ function styleTotalColor(roundedBillTotal){
             billTotalElement.classList.remove('warning')
         }
         //add the coloe total
-        billTotalElement.classList.add('danger');
+        billTotalElement.classList.add('critical');
     }
 
 }

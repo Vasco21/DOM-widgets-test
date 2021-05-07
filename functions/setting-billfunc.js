@@ -71,7 +71,7 @@ function billWithSettings(){
     function totalClassName(){
         
         if (reachedCritcalLev()){
-            return 'danger';
+            return 'critical';
         }
         if (getTotalCost() >= getWarningLev()){
             return 'warning';

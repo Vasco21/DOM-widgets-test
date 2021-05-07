@@ -36,12 +36,12 @@ function TotalColor(totalValue){
             totalOneElement.classList.remove('warning')
         }
         //add the coloe total
-        totalOneElement.classList.add('danger');
+        totalOneElement.classList.add('critical');
     }
         // remove the color total 
     else if(totalValue > 29.99 && totalValue <= 49.99){
-        if(totalOneElement.classList.contains('danger')){
-            totalOneElement.classList.remove('danger')
+        if(totalOneElement.classList.contains('critical')){
+            totalOneElement.classList.remove('critical')
         }
         //add the coloe total
         totalOneElement.classList.add('warning');
